@@ -1,1 +1,20 @@
-<p>game-page works!</p>
+<div class="text-center">
+    <div>
+    tour de cedric
+    </div>
+
+<div class="grid">
+    <app-cell *ngFor="let cell of grid" [cell]="cell" class="cell" (click)="clickOnCell(cell)"></app-cell>
+    
+    
+        <!-- <div *ngIf="!cell.empty && cell.cross" class="cross"></div> -->
+        <!-- <div *ngIf="!cell.empty && cell.circle" class="circle"></div> -->
+    
+    
+    
+</div>
+
+    <button type="button" class="btn btn-primary">
+        recommencer la partie
+    </button>
+</div>

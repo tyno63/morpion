@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Cell } from '../cell';
 
 @Component({
   selector: 'app-game-page',
@@ -7,9 +8,25 @@ import { Component, OnInit } from '@angular/core';
 })
 export class GamePageComponent implements OnInit {
 
-  constructor() { }
+  public grid: Array<Cell> = [];
 
+  private gridsize = 9;
+
+  constructor() { 
+    for (let i = 0; i < this.gridsize; i++) {
+        this.grid.push({
+          empty: true,
+          cross: false,
+          circle: false,
+        });
+      }
+  }
   ngOnInit(): void {
   }
-
+  public clickOnCell(cell: Cell): void {
+    cell.empty = false;
+    cell.cross = true;
+  }
 }
+
+
